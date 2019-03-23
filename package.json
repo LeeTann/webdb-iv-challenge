@@ -5,8 +5,8 @@
   "repository": "https://github.com/LeeTann/webdb-iv-challenge.git",
   "author": "ltann <leeroyleeroy18@gmail.com>",
   "license": "MIT",
-  "server": {
-    "index": "nodemon index.js"
+  "scripts": {
+    "server": "nodemon index.js"
   },
   "dependencies": {
     "express": "^4.16.4",
