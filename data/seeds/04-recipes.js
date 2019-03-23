@@ -5,10 +5,10 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('recipes').insert([
-        {recipe_name: 'Hawaiian'},
-        {recipe_name: 'Pepperoni'},
-        {recipe_name: 'Spaghetti and Meatballs'},
-        {recipe_name: 'Spaghetti with Pesto'}
+        {recipe_name: 'Hawaiian', dish_id: 1},
+        {recipe_name: 'Pepperoni', dish_id: 1},
+        {recipe_name: 'Spaghetti and Meatballs', dish_id: 2},
+        {recipe_name: 'Spaghetti with Pesto', dish_id: 2}
       ]);
     });
 };
