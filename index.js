@@ -37,6 +37,24 @@ server.get('/api/dishes/:id', async (req, res) => {
     }
 })
 
+server.get('/api/recipes', async (req, res) => {
+    try{
+        const recipes = await db.getRecipes()
+        res.status(200).json(recipes)
+    } catch(error) {
+        res.status(500).json(error)
+    }
+})
+
+server.post('/api/recipes', async (req, res) => {
+    try {
+        const recipe = await db.addRecipes(req.body)
+        res.status(201).json(recipe)
+    } catch(error) {
+        res.status(500).json(error)
+    }
+})
+
 const port = process.env.PORT || 5000
 server.listen(port, () => console.log(`\nrunning on port ${port}\n`))
 
