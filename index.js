@@ -1,6 +1,5 @@
 const express = require('express')
 const server = express()
-const knex = require('knex')
 
 const db = require('./data/dbHelpers') 
 
@@ -10,6 +9,15 @@ server.get('/api/dishes', async (req, res) => {
     try {
         const dishes = await db.getDishes()
         res.status(200).json(dishes)
+    } catch(error) {
+        res.status(500).json(error)
+    }
+})
+
+server.post('/api/dishes', async (req, res) => {
+    try {
+        const dishes = await db.addDish(req.body)
+        res.status(201).json(dishes)
     } catch(error) {
         res.status(500).json(error)
     }
